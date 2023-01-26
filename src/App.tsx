@@ -1,7 +1,9 @@
+import { Router } from './Router';
+
 function App() {
   return (
     <div>
-      <p>oi cara de boi</p>
+      <Router />
     </div>
   );
 }
