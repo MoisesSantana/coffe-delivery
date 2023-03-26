@@ -2,7 +2,7 @@ import { Box, styled } from '@mui/material';
 
 export const HeroContainer = styled(Box)`
   background-color: #fafafa;
-  padding-top: 4rem;
+  padding: 4rem 0;
   display: flex;
   align-items: center;
   justify-content: space-around;
