@@ -3,9 +3,11 @@ import { Box, styled } from '@mui/material';
 export const HeroContainer = styled(Box)`
   background-color: #fafafa;
   padding: 4rem 0;
+  margin: 0 auto;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  width: 80%;
 
   .left-content {
     display: flex;
