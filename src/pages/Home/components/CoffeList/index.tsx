@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material';
 import { CoffeCard } from '../CoffeCard';
 import coffeAmericano from '../../../../assets/images/coffes/coffe-americano.svg';
 import coffeArabe from '../../../../assets/images/coffes/coffe-arabe.svg';
@@ -13,6 +14,7 @@ import coffeIrlandes from '../../../../assets/images/coffes/coffe-irlandes.svg';
 import coffeLatte from '../../../../assets/images/coffes/coffe-latte.svg';
 import coffeMacchiato from '../../../../assets/images/coffes/coffe-macchiato.svg';
 import coffeMochaccino from '../../../../assets/images/coffes/coffe-mochaccino.svg';
+import { CoffeListContainer } from './coffelist-styled';
 
 export function CoffeList() {
   const cards = [
@@ -136,13 +138,15 @@ export function CoffeList() {
   ];
 
   return (
-    <section>
+    <CoffeListContainer>
       <h3>Nossos cafés</h3>
-      <ul>
+      <Grid container spacing={6}>
         {cards.map((coffe) => (
-          <CoffeCard key={coffe.id} {...coffe} />
+          <Grid key={coffe.id} item xs={12} sm={6} md={4} lg={3}>
+            <CoffeCard {...coffe} />
+          </Grid>
         ))}
-      </ul>
-    </section>
+      </Grid>
+    </CoffeListContainer>
   );
 }

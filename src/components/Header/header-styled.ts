@@ -1,11 +1,12 @@
 import { styled } from '@mui/material';
 
 export const HeaderContainer = styled('header')`
-  width: 100vw;
+  width: 100%;
   background-color: #fafafa;
   display: flex;
   justify-content: space-between;
   padding: 0 4rem;
+  margin: 0;
   height: 105px;
   align-items: center;
   @media (max-width: 768px) {
