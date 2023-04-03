@@ -1,19 +1,19 @@
 import { Grid } from '@mui/material';
 import { CoffeCard } from '../CoffeCard';
-import coffeAmericano from '../../../../assets/images/coffes/coffe-americano.svg';
-import coffeArabe from '../../../../assets/images/coffes/coffe-arabe.svg';
-import coffeCapuccino from '../../../../assets/images/coffes/coffe-capuccino.svg';
-import coffeChocolateQuente from '../../../../assets/images/coffes/coffe-chocolate-quente.svg';
-import coffeComLeite from '../../../../assets/images/coffes/coffe-com-leite.svg';
-import coffeCremoso from '../../../../assets/images/coffes/coffe-cremoso.svg';
-import coffeCubano from '../../../../assets/images/coffes/coffe-cubano.svg';
-import coffeExpresso from '../../../../assets/images/coffes/coffe-expresso.svg';
-import coffeGelado from '../../../../assets/images/coffes/coffe-gelado.svg';
-import coffeHavaiano from '../../../../assets/images/coffes/coffe-havaiano.svg';
-import coffeIrlandes from '../../../../assets/images/coffes/coffe-irlandes.svg';
-import coffeLatte from '../../../../assets/images/coffes/coffe-latte.svg';
-import coffeMacchiato from '../../../../assets/images/coffes/coffe-macchiato.svg';
-import coffeMochaccino from '../../../../assets/images/coffes/coffe-mochaccino.svg';
+import coffeAmericano from '../../../../assets/images/home/coffes/coffe-americano.svg';
+import coffeArabe from '../../../../assets/images/home/coffes/coffe-arabe.svg';
+import coffeCapuccino from '../../../../assets/images/home/coffes/coffe-capuccino.svg';
+import coffeChocolateQuente from '../../../../assets/images/home/coffes/coffe-chocolate-quente.svg';
+import coffeComLeite from '../../../../assets/images/home/coffes/coffe-com-leite.svg';
+import coffeCremoso from '../../../../assets/images/home/coffes/coffe-cremoso.svg';
+import coffeCubano from '../../../../assets/images/home/coffes/coffe-cubano.svg';
+import coffeExpresso from '../../../../assets/images/home/coffes/coffe-expresso.svg';
+import coffeGelado from '../../../../assets/images/home/coffes/coffe-gelado.svg';
+import coffeHavaiano from '../../../../assets/images/home/coffes/coffe-havaiano.svg';
+import coffeIrlandes from '../../../../assets/images/home/coffes/coffe-irlandes.svg';
+import coffeLatte from '../../../../assets/images/home/coffes/coffe-latte.svg';
+import coffeMacchiato from '../../../../assets/images/home/coffes/coffe-macchiato.svg';
+import coffeMochaccino from '../../../../assets/images/home/coffes/coffe-mochaccino.svg';
 import { CoffeListContainer } from './coffelist-styled';
 
 export function CoffeList() {

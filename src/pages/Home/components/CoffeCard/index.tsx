@@ -7,8 +7,8 @@ import {
   FooterCardContainer,
   Tag,
 } from './coffecard-styled';
-import cartIconDisable from '../../../../assets/images/button-cart.svg';
-import cartIconHover from '../../../../assets/images/button-cart-hover.svg';
+import cartIconDisable from '../../../../assets/images/home/button-cart.svg';
+import cartIconHover from '../../../../assets/images/home/button-cart-hover.svg';
 
 interface CoffeCardProps {
   name: string;

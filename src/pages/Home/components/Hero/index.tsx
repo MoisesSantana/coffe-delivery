@@ -1,9 +1,9 @@
 import { HeroContainer } from './hero-styled';
-import hero from '../../../../assets/images/hero.svg';
-import cartBullet from '../../../../assets/images/bullets/cart-bullet.svg';
-import coffeBullet from '../../../../assets/images/bullets/coffe-bullet.svg';
-import packageBullet from '../../../../assets/images/bullets/package-bullet.svg';
-import timerBullet from '../../../../assets/images/bullets/timer-bullet.svg';
+import hero from '../../../../assets/images/home/hero.svg';
+import cartBullet from '../../../../assets/images/home/bullets/cart-bullet.svg';
+import coffeBullet from '../../../../assets/images/home/bullets/coffe-bullet.svg';
+import packageBullet from '../../../../assets/images/home/bullets/package-bullet.svg';
+import timerBullet from '../../../../assets/images/home/bullets/timer-bullet.svg';
 import { Bullet } from './components/Bullet';
 
 export function Hero() {
