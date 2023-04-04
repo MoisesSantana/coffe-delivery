@@ -2,12 +2,11 @@ import { styled } from '@mui/material';
 
 export const FormContainer = styled('form')`
   background-color: #fafafa;
-  background-color: red;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 1820px) {
+  /* @media (max-width: 1820px) {
     width: 70%;
   }
   @media (max-width: 1540px) {
@@ -15,7 +14,7 @@ export const FormContainer = styled('form')`
   }
   @media (max-width: 1360px) {
     width: 90%;
-  }
+  } */
 
   .form-title {
     font-family: 'Baloo 2', cursive;

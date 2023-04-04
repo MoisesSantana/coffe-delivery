@@ -7,7 +7,7 @@ export const CartContainer = styled('section')`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  @media (max-width: 1820px) {
+  /* @media (max-width: 1820px) {
     width: 70%;
   }
   @media (max-width: 1540px) {
@@ -15,7 +15,7 @@ export const CartContainer = styled('section')`
   }
   @media (max-width: 1360px) {
     width: 90%;
-  }
+  } */
 
   .cart-title {
     font-family: 'Baloo 2', cursive;

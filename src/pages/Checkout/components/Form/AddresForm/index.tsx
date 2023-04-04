@@ -1,5 +1,22 @@
+import { Grid, TextField, Typography } from '@mui/material';
 import pin from '../../../../../assets/images/cart/pin.svg';
-import { AddresContainer } from './addres-styled';
+import { AddresContainer, InputsContainer } from './addres-styled';
+
+const LABEL_PROPS = {
+  style: {
+    fontFamily: 'Roboto, sans-serif',
+    fontSize: '14px',
+    color: '#8D8686',
+  },
+};
+
+const INPUT_PROPS = {
+  style: {
+    fontFamily: 'Roboto, sans-serif',
+    fontSize: '14px',
+    color: '#574F4D',
+  },
+};
 
 export function AddressForm() {
   return (
@@ -11,21 +28,108 @@ export function AddressForm() {
           <small>Informe o endereço onde deseja receber seu pedido</small>
         </div>
       </header>
-      <div>
-        <input type="text" placeholder="cep" />
-      </div>
-      <div>
-        <input type="text" placeholder="rua" />
-      </div>
-      <div>
-        <input type="text" placeholder="numero" />
-        <input type="text" placeholder="complemento" />
-      </div>
-      <div>
-        <input type="text" placeholder="bairro" />
-        <input type="text" placeholder="cidade" />
-        <input type="text" placeholder="uf" />
-      </div>
+      <InputsContainer>
+        <Grid container spacing={2}>
+          <Grid item xs={8}>
+            <TextField
+              label="CEP"
+              type="text"
+              className="xab"
+              variant="outlined"
+              color="warning"
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={12}>
+            <TextField
+              label="Rua"
+              variant="outlined"
+              color="warning"
+              fullWidth
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <TextField
+              label="Número"
+              variant="outlined"
+              color="warning"
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+          <Grid item xs={8}>
+            <TextField
+              label="Complemento"
+              variant="outlined"
+              color="warning"
+              size="small"
+              fullWidth
+              InputLabelProps={LABEL_PROPS}
+              InputProps={{
+                endAdornment: (
+                  <Typography
+                    variant="caption"
+                    fontFamily="Roboto, sans-serif"
+                    fontSize="12px"
+                    color="#8D8686"
+                    fontStyle="italic"
+                    gutterBottom
+                    p={0}
+                    m={0}
+                  >
+                    opicional
+                  </Typography>
+                ),
+              }}
+              // eslint-disable-next-line react/jsx-no-duplicate-props
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+        </Grid>
+        <Grid container spacing={2}>
+          <Grid item xs={4}>
+            <TextField
+              label="Bairro"
+              variant="outlined"
+              color="warning"
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+          <Grid item xs={6}>
+            <TextField
+              label="Cidade"
+              fullWidth
+              variant="outlined"
+              color="warning"
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+          <Grid item xs={2}>
+            <TextField
+              label="UF"
+              variant="outlined"
+              color="warning"
+              size="small"
+              InputLabelProps={LABEL_PROPS}
+              inputProps={INPUT_PROPS}
+            />
+          </Grid>
+        </Grid>
+      </InputsContainer>
     </AddresContainer>
   );
 }
