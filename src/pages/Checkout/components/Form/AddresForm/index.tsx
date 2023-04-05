@@ -34,9 +34,8 @@ export function AddressForm() {
             <TextField
               label="CEP"
               type="text"
-              className="xab"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -48,7 +47,7 @@ export function AddressForm() {
             <TextField
               label="Rua"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               fullWidth
               size="small"
               InputLabelProps={LABEL_PROPS}
@@ -61,7 +60,7 @@ export function AddressForm() {
             <TextField
               label="Número"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -71,7 +70,7 @@ export function AddressForm() {
             <TextField
               label="Complemento"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               fullWidth
               InputLabelProps={LABEL_PROPS}
@@ -101,7 +100,7 @@ export function AddressForm() {
             <TextField
               label="Bairro"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -112,7 +111,7 @@ export function AddressForm() {
               label="Cidade"
               fullWidth
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -122,7 +121,7 @@ export function AddressForm() {
             <TextField
               label="UF"
               variant="outlined"
-              color="warning"
+              color="baseButton"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}

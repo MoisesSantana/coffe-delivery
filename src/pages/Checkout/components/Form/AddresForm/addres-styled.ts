@@ -32,9 +32,4 @@ export const InputsContainer = styled(Box)`
   flex-direction: column;
   margin-top: 32px;
   gap: 16px;
-
-  .xab {
-    /* font-family: 'Roboto', sans-serif; */
-    color: red !important;
-  }
 `;
