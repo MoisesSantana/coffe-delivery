@@ -1,4 +1,5 @@
 import { useTheme } from '@mui/material';
+import { useEffect } from 'react';
 import useIsMobile from '../../hooks/useIsMobile';
 import { CheckoutContainer } from './checkout-styled';
 import { Cart } from './components/Cart';
@@ -8,8 +9,10 @@ export function Checkout() {
   const isMobile = useIsMobile();
   const theme = useTheme();
 
-  console.log('isMobile', isMobile);
-  console.log('theme', theme);
+  useEffect(() => {
+    console.log('isMobile', isMobile);
+    console.log('theme', theme);
+  }, [isMobile, theme]);
 
   return (
     <CheckoutContainer>
