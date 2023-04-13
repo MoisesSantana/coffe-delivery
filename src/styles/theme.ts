@@ -26,9 +26,14 @@ import { createTheme } from '@mui/material/styles';
 // };
 
 export const customPalette = {
-  yellowMain: '#DBAC2C',
-  yellowDark: '#C47F17',
-  YellowLight: '#F1E9C9',
+  // yellowMain: '#DBAC2C',
+  // yellowDark: '#C47F17',
+  // YellowLight: '#F1E9C9',
+  yellow: {
+    main: '#DBAC2C',
+    dark: '#C47F17',
+    light: '#F1E9C9',
+  },
   purpleMain: '#8047F8',
   purpleDark: '#4B2995',
   purpleLight: '#EBE5F9',

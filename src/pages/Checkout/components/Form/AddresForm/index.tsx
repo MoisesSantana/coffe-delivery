@@ -1,4 +1,4 @@
-import { Grid, TextField, Typography } from '@mui/material';
+import { Grid, TextField, Typography, useTheme } from '@mui/material';
 import pin from '../../../../../assets/images/cart/pin.svg';
 import { AddresContainer, InputsContainer } from './addres-styled';
 
@@ -19,6 +19,8 @@ const INPUT_PROPS = {
 };
 
 export function AddressForm() {
+  const { palette } = useTheme();
+
   return (
     <AddresContainer>
       <header>
@@ -35,7 +37,7 @@ export function AddressForm() {
               label="CEP"
               type="text"
               variant="outlined"
-              color="baseButton"
+              color={palette.yellow.main}
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}

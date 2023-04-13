@@ -2,9 +2,11 @@ import '@mui/material/styles';
 
 declare module '@mui/material/styles' {
   export interface PaletteOptions {
-    yellowMain?: string;
-    yellowDark?: string;
-    YellowLight?: string;
+    yellow: {
+      main: string;
+      dark: string;
+      light: string;
+    };
     purpleMain?: string;
     purpleDark?: string;
     purpleLight?: string;
@@ -21,9 +23,11 @@ declare module '@mui/material/styles' {
   }
 
   export interface Palette {
-    yellowMain?: string;
-    yellowDark?: string;
-    YellowLight?: string;
+    yellow: {
+      main: string;
+      dark: string;
+      light: string;
+    };
     purpleMain?: string;
     purpleDark?: string;
     purpleLight?: string;
@@ -42,6 +46,10 @@ declare module '@mui/material/styles' {
 
 declare module '@mui/material/TextField' {
   export interface TextFieldPropsColorOverrides {
-    baseButton: true;
+    yellow: {
+      main: true;
+      dark: true;
+      light: true;
+    };
   }
 }
