@@ -15,20 +15,6 @@ export const CoffeCardContainer = styled(Card)`
   .coffe-image {
     margin-top: -20px;
   }
-
-  .coffe-name {
-    font-family: 'Baloo 2', cursive;
-    font-size: 20px;
-    color: #403937;
-  }
-
-  .description {
-    color: #8d8686;
-    font-size: 14px;
-    font-family: 'Roboto', sans-serif;
-    text-align: center;
-    padding: 0 20px;
-  }
 `;
 
 export const Tag = styled(Chip)`

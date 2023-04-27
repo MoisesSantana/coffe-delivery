@@ -1,28 +1,48 @@
+import { Typography } from '@mui/material';
 import { HeroContainer } from './hero-styled';
-import hero from '../../../../assets/images/home/hero.svg';
-import cartBullet from '../../../../assets/images/home/bullets/cart-bullet.svg';
-import coffeBullet from '../../../../assets/images/home/bullets/coffe-bullet.svg';
-import packageBullet from '../../../../assets/images/home/bullets/package-bullet.svg';
-import timerBullet from '../../../../assets/images/home/bullets/timer-bullet.svg';
 import { Bullet } from './components/Bullet';
 
 export function Hero() {
   const bullets = [
-    { id: 0, image: cartBullet, text: 'Compra simples e segura' },
-    { id: 1, image: packageBullet, text: 'Embalagem mantém o café intacto' },
-    { id: 2, image: timerBullet, text: 'Entrega rápida e rastreada' },
-    { id: 3, image: coffeBullet, text: 'O café chega fresquinho até você' },
+    {
+      id: 0,
+      image: './bullets/cart-bullet.svg',
+      text: 'Compra simples e segura',
+    },
+    {
+      id: 1,
+      image: './bullets/package-bullet.svg',
+      text: 'Embalagem mantém o café intacto',
+    },
+    {
+      id: 2,
+      image: './bullets/timer-bullet.svg',
+      text: 'Entrega rápida e rastreada',
+    },
+    {
+      id: 3,
+      image: './bullets/coffe-bullet.svg',
+      text: 'O café chega fresquinho até você',
+    },
   ];
 
   return (
     <HeroContainer>
       <div className="left-content">
         <div className="titles">
-          <h1>Encontre o café perfeito para qualquer hora do dia</h1>
-          <h2>
+          <Typography variant="h1">
+            Encontre o café perfeito para qualquer hora do dia
+          </Typography>
+          <Typography
+            variant="subtitle1"
+            sx={{
+              mt: 1,
+              mb: 4,
+            }}
+          >
             Com o Coffee Delivery você recebe seu café onde estiver, a qualquer
             hora
-          </h2>
+          </Typography>
         </div>
         <div className="bullets">
           {bullets.map((bullet) => (
@@ -32,7 +52,7 @@ export function Hero() {
       </div>
       <div className="right-content">
         <div className="image">
-          <img src={hero} alt="Coffe Delivery" />
+          <img src="/home/hero.svg" alt="Coffe Delivery" />
         </div>
       </div>
     </HeroContainer>

@@ -17,12 +17,4 @@ export const CoffeListContainer = styled(Box)`
   @media (max-width: 1360px) {
     width: 90%;
   }
-
-  h3 {
-    font-family: 'Baloo 2', cursive;
-    line-height: 130%;
-    font-weight: 800;
-    font-size: 32px;
-    color: #403937;
-  }
 `;

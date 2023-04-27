@@ -1,19 +1,5 @@
-import { Grid } from '@mui/material';
+import { Grid, Typography } from '@mui/material';
 import { CoffeCard } from '../CoffeCard';
-import coffeAmericano from '../../../../assets/images/home/coffes/coffe-americano.svg';
-import coffeArabe from '../../../../assets/images/home/coffes/coffe-arabe.svg';
-import coffeCapuccino from '../../../../assets/images/home/coffes/coffe-capuccino.svg';
-import coffeChocolateQuente from '../../../../assets/images/home/coffes/coffe-chocolate-quente.svg';
-import coffeComLeite from '../../../../assets/images/home/coffes/coffe-com-leite.svg';
-import coffeCremoso from '../../../../assets/images/home/coffes/coffe-cremoso.svg';
-import coffeCubano from '../../../../assets/images/home/coffes/coffe-cubano.svg';
-import coffeExpresso from '../../../../assets/images/home/coffes/coffe-expresso.svg';
-import coffeGelado from '../../../../assets/images/home/coffes/coffe-gelado.svg';
-import coffeHavaiano from '../../../../assets/images/home/coffes/coffe-havaiano.svg';
-import coffeIrlandes from '../../../../assets/images/home/coffes/coffe-irlandes.svg';
-import coffeLatte from '../../../../assets/images/home/coffes/coffe-latte.svg';
-import coffeMacchiato from '../../../../assets/images/home/coffes/coffe-macchiato.svg';
-import coffeMochaccino from '../../../../assets/images/home/coffes/coffe-mochaccino.svg';
 import { CoffeListContainer } from './coffelist-styled';
 
 export function CoffeList() {
@@ -22,7 +8,7 @@ export function CoffeList() {
       id: 0,
       name: 'Expresso Tradicional',
       description: 'O tradicional café feito com água quente e grãos moídos',
-      image: coffeExpresso,
+      image: './coffes/coffe-expresso.svg',
       price: 9.9,
       tags: ['tradicional'],
     },
@@ -30,7 +16,7 @@ export function CoffeList() {
       id: 1,
       name: 'Expresso Americano',
       description: 'Expresso diluído, menos intenso que o tradicional',
-      image: coffeAmericano,
+      image: './coffes/coffe-americano.svg',
       price: 9.9,
       tags: ['tradicional'],
     },
@@ -38,7 +24,7 @@ export function CoffeList() {
       id: 2,
       name: 'Expresso Cremoso',
       description: 'Café expresso tradicional com espuma cremosa',
-      image: coffeCremoso,
+      image: './coffes/coffe-cremoso.svg',
       price: 9.9,
       tags: ['tradicional'],
     },
@@ -46,7 +32,7 @@ export function CoffeList() {
       id: 3,
       name: 'Expresso Gelado',
       description: 'Bebida preparada com café expresso e cubos de gelo',
-      image: coffeGelado,
+      image: './coffes/coffe-gelado.svg',
       price: 9.9,
       tags: ['tradicional', 'gelado'],
     },
@@ -54,7 +40,7 @@ export function CoffeList() {
       id: 4,
       name: 'Café com Leite',
       description: 'Meio a meio de expresso tradicional com leite vaporizado',
-      image: coffeComLeite,
+      image: './coffes/coffe-com-leite.svg',
       price: 12.9,
       tags: ['tradicional', 'com leite'],
     },
@@ -63,7 +49,7 @@ export function CoffeList() {
       name: 'Latte',
       description:
         'Uma dose de café expresso com o dobro de leite e espuma cremosa',
-      image: coffeLatte,
+      image: './coffes/coffe-latte.svg',
       price: 12.9,
       tags: ['tradicional', 'com leite'],
     },
@@ -72,7 +58,7 @@ export function CoffeList() {
       name: 'Capuccino',
       description:
         'Bebida com canela feita de doses iguais de café, leite e espuma',
-      image: coffeCapuccino,
+      image: './coffes/coffe-capuccino.svg',
       price: 12.9,
       tags: ['tradicional', 'com leite'],
     },
@@ -81,7 +67,7 @@ export function CoffeList() {
       name: 'Macchiato',
       description:
         'Café expresso misturado com um pouco de leite quente e espuma',
-      image: coffeMacchiato,
+      image: './coffes/coffe-macchiato.svg',
       price: 12.9,
       tags: ['tradicional', 'com leite'],
     },
@@ -89,7 +75,7 @@ export function CoffeList() {
       id: 8,
       name: 'Mocaccino',
       description: 'Café expresso com calda de chocolate, pouco leite e espuma',
-      image: coffeMochaccino,
+      image: './coffes/coffe-mochaccino.svg',
       price: 12.9,
       tags: ['tradicional', 'com leite'],
     },
@@ -98,7 +84,7 @@ export function CoffeList() {
       name: 'Chocolate Quente',
       description:
         'Bebida feita com chocolate dissolvido no leite quente e café',
-      image: coffeChocolateQuente,
+      image: './coffes/coffe-chocolate-quente.svg',
       price: 17.5,
       tags: ['especial', 'com leite'],
     },
@@ -107,7 +93,7 @@ export function CoffeList() {
       name: 'Cubano',
       description:
         'Drink gelado de café expresso com rum, creme de leite e hortelã',
-      image: coffeCubano,
+      image: './coffes/coffe-cubano.svg',
       price: 20,
       tags: ['especial', 'alcoólico', 'gelado'],
     },
@@ -115,7 +101,7 @@ export function CoffeList() {
       id: 11,
       name: 'Havaiano',
       description: 'Bebida adocicada preparada com café e leite de coco',
-      image: coffeHavaiano,
+      image: './coffes/coffe-havaiano.svg',
       price: 15,
       tags: ['especial'],
     },
@@ -123,7 +109,7 @@ export function CoffeList() {
       id: 12,
       name: 'Árabe',
       description: 'Bebida preparada com grãos de café árabe e especiarias',
-      image: coffeArabe,
+      image: './coffes/coffe-arabe.svg',
       price: 15,
       tags: ['especial'],
     },
@@ -131,7 +117,7 @@ export function CoffeList() {
       id: 13,
       name: 'Irlandês',
       description: 'Bebida a base de café, uísque irlandês, açúcar e chantilly',
-      image: coffeIrlandes,
+      image: './coffes/coffe-irlandes.svg',
       price: 20,
       tags: ['especial', 'alcoólico'],
     },
@@ -139,7 +125,9 @@ export function CoffeList() {
 
   return (
     <CoffeListContainer>
-      <h3>Nossos cafés</h3>
+      <Typography variant="h2" sx={{ my: 4 }}>
+        Nossos cafés
+      </Typography>
       <Grid container spacing={6}>
         {cards.map((coffe) => (
           <Grid key={coffe.id} item xs={12} sm={6} md={4} lg={3}>

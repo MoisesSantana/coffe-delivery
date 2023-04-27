@@ -30,24 +30,6 @@ export const HeroContainer = styled(Box)`
       flex-direction: column;
       align-items: center;
       justify-content: center;
-
-      h1 {
-        color: '#272221';
-        font-family: 'Baloo 2', cursive;
-        line-height: 130%;
-        font-weight: 800;
-        font-size: 48px;
-        margin-top: 0;
-        margin-bottom: 16px;
-      }
-
-      h2 {
-        color: '#403937';
-        font-family: 'Roboto', sans-serif;
-        line-height: 130%;
-        font-weight: 300;
-        font-size: 20px;
-      }
     }
 
     .bullets {

@@ -1,4 +1,4 @@
-import { Stack } from '@mui/material';
+import { Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import {
   ButtonContainer,
@@ -7,8 +7,6 @@ import {
   FooterCardContainer,
   Tag,
 } from './coffecard-styled';
-import cartIconDisable from '../../../../assets/images/home/button-cart.svg';
-import cartIconHover from '../../../../assets/images/home/button-cart-hover.svg';
 
 interface CoffeCardProps {
   name: string;
@@ -25,7 +23,7 @@ export function CoffeCard({
   price,
   tags,
 }: CoffeCardProps) {
-  const [cartIcon, setCartIcon] = useState<string>(cartIconDisable);
+  const [cartIcon, setCartIcon] = useState<string>('./home/button-cart.svg');
   const [quantity, setQuantity] = useState<number>(1);
 
   const handleQuantity = (add: number): void => {
@@ -45,8 +43,17 @@ export function CoffeCard({
           <Tag key={`${name}-${tag}`} label={tag} />
         ))}
       </Stack>
-      <strong className="coffe-name">{name}</strong>
-      <p className="description">{description}</p>
+      <Typography variant="h3">{name}</Typography>
+      <Typography
+        variant="body2"
+        align="center"
+        fontSize={14}
+        sx={{
+          px: '20px',
+        }}
+      >
+        {description}
+      </Typography>
       <FooterCardContainer>
         <span className="price">{price.toFixed(2)}</span>
 
@@ -61,9 +68,9 @@ export function CoffeCard({
             </ButtonContainer>
           </ButtonGroupContainer>
           <img
-            onMouseEnter={() => setCartIcon(cartIconHover)}
-            onMouseOut={() => setCartIcon(cartIconDisable)}
-            onBlur={() => setCartIcon(cartIconDisable)}
+            onMouseEnter={() => setCartIcon('./home/button-cart.svg')}
+            onMouseOut={() => setCartIcon('./home/button-cart.svg')}
+            onBlur={() => setCartIcon('./home/button-cart.svg')}
             className="cart"
             src={cartIcon}
             alt="carrinho"
