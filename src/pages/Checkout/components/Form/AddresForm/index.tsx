@@ -1,5 +1,4 @@
-import { Grid, TextField, Typography, useTheme } from '@mui/material';
-import pin from '../../../../../assets/images/cart/pin.svg';
+import { Grid, TextField, Typography } from '@mui/material';
 import { AddresContainer, InputsContainer } from './addres-styled';
 
 const LABEL_PROPS = {
@@ -19,12 +18,10 @@ const INPUT_PROPS = {
 };
 
 export function AddressForm() {
-  const { palette } = useTheme();
-
   return (
     <AddresContainer>
       <header>
-        <img src={pin} alt="pin" />
+        <img src="./cart/pin.svg" alt="pin" />
         <div className="header-texting">
           <span>Endereço de Entrega</span>
           <small>Informe o endereço onde deseja receber seu pedido</small>
@@ -37,8 +34,8 @@ export function AddressForm() {
               label="CEP"
               type="text"
               variant="outlined"
-              color={palette.yellow.main}
               size="small"
+              color="secondary"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
             />
@@ -49,7 +46,7 @@ export function AddressForm() {
             <TextField
               label="Rua"
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               fullWidth
               size="small"
               InputLabelProps={LABEL_PROPS}
@@ -62,7 +59,7 @@ export function AddressForm() {
             <TextField
               label="Número"
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -72,24 +69,13 @@ export function AddressForm() {
             <TextField
               label="Complemento"
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               size="small"
               fullWidth
               InputLabelProps={LABEL_PROPS}
               InputProps={{
                 endAdornment: (
-                  <Typography
-                    variant="caption"
-                    fontFamily="Roboto, sans-serif"
-                    fontSize="12px"
-                    color="#8D8686"
-                    fontStyle="italic"
-                    gutterBottom
-                    p={0}
-                    m={0}
-                  >
-                    opicional
-                  </Typography>
+                  <Typography variant="caption">opicional</Typography>
                 ),
               }}
               // eslint-disable-next-line react/jsx-no-duplicate-props
@@ -102,7 +88,7 @@ export function AddressForm() {
             <TextField
               label="Bairro"
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -113,7 +99,7 @@ export function AddressForm() {
               label="Cidade"
               fullWidth
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -123,7 +109,7 @@ export function AddressForm() {
             <TextField
               label="UF"
               variant="outlined"
-              color="baseButton"
+              color="secondary"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}

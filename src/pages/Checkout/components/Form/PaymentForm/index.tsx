@@ -1,32 +1,28 @@
 import { CardsContainer, PaymentContainer } from './payment-styled';
-import dolar from '../../../../../assets/images/cart/dolar.svg';
-import credit from '../../../../../assets/images/cart/cards/credit-card.svg';
-import debit from '../../../../../assets/images/cart/cards/debit-cart.svg';
-import money from '../../../../../assets/images/cart/cards/money.svg';
 
 export function PaymentForm() {
   const cards = [
     {
       id: 0,
       text: 'Cartão de crédito',
-      image: credit,
+      image: './cards/credit-card.svg',
     },
     {
       id: 1,
       text: 'Cartão de débito',
-      image: debit,
+      image: './cards/debit-cart.svg',
     },
     {
       id: 2,
       text: 'Dinheiro',
-      image: money,
+      image: './cards/money.svg',
     },
   ];
 
   return (
     <PaymentContainer>
       <header>
-        <img src={dolar} alt="pin" />
+        <img src="./cart/dolar.svg" alt="pin" />
         <div className="header-texting">
           <span>Endereço de Entrega</span>
           <small>Informe o endereço onde deseja receber seu pedido</small>

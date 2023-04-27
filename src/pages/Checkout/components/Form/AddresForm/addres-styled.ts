@@ -32,4 +32,19 @@ export const InputsContainer = styled(Box)`
   flex-direction: column;
   margin-top: 32px;
   gap: 16px;
+
+  fieldset {
+    border: 1px solid ${({ theme }) => theme.palette.secondary.main};
+
+    &:focus {
+      border: 1px solid ${({ theme }) => theme.palette.warning.dark};
+    }
+  }
+
+  input[type='text'] {
+    height: 1.5rem;
+    text-align: center;
+    color: ${({ theme }) => theme.palette.grey[900]};
+    font-weight: bold;
+  }
 `;
