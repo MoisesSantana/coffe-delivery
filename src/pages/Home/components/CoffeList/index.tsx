@@ -1,6 +1,5 @@
 import { Grid, Typography } from '@mui/material';
-import { CoffeCard } from '../CoffeCard';
-import { CoffeListContainer } from './coffelist-styled';
+import { CoffeCard } from './CoffeCard';
 
 export function CoffeList() {
   const cards = [
@@ -124,7 +123,7 @@ export function CoffeList() {
   ];
 
   return (
-    <CoffeListContainer>
+    <div>
       <Typography variant="h2" sx={{ my: 4 }}>
         Nossos cafés
       </Typography>
@@ -135,6 +134,6 @@ export function CoffeList() {
           </Grid>
         ))}
       </Grid>
-    </CoffeListContainer>
+    </div>
   );
 }

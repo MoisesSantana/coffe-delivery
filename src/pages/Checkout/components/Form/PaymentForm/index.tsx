@@ -1,4 +1,6 @@
-import { CardsContainer, PaymentContainer } from './payment-styled';
+import { Typography, useTheme } from '@mui/material';
+import { CardContainer, CardsContainer } from './payment-styled';
+import { FormCards } from '../../../../../styles/shared-styles';
 
 export function PaymentForm() {
   const cards = [
@@ -19,23 +21,28 @@ export function PaymentForm() {
     },
   ];
 
+  const { palette } = useTheme();
   return (
-    <PaymentContainer>
+    <FormCards p="2.5rem">
       <header>
         <img src="./cart/dolar.svg" alt="pin" />
-        <div className="header-texting">
-          <span>Endereço de Entrega</span>
-          <small>Informe o endereço onde deseja receber seu pedido</small>
+        <div>
+          <Typography variant="body1" fontSize={16} color={palette.grey[800]}>
+            Endereço de Entrega
+          </Typography>
+          <Typography variant="body1" fontSize={14}>
+            Informe o endereço onde deseja receber seu pedido
+          </Typography>
         </div>
       </header>
-      <CardsContainer>
+      <CardsContainer mt="2rem" gap="1rem">
         {cards.map((card) => (
-          <div key={card.id}>
+          <CardContainer key={card.id}>
             <img src={card.image} alt={card.text} />
             <span>{card.text}</span>
-          </div>
+          </CardContainer>
         ))}
       </CardsContainer>
-    </PaymentContainer>
+    </FormCards>
   );
 }

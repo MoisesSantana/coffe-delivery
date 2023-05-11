@@ -57,6 +57,7 @@ const theme = createTheme({
       fontFamily: '"Baloo 2", cursive',
       color: '#403937',
       fontSize: 18,
+      fontWeight: 'bold',
     },
     caption: {
       fontFamily: '"Roboto", sans-serif',

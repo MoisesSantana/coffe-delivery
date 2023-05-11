@@ -27,9 +27,9 @@ export function Hero() {
   ];
 
   return (
-    <HeroContainer>
+    <HeroContainer py="4rem" m="auto">
       <div className="left-content">
-        <div className="titles">
+        <div>
           <Typography variant="h1">
             Encontre o café perfeito para qualquer hora do dia
           </Typography>
@@ -50,8 +50,8 @@ export function Hero() {
           ))}
         </div>
       </div>
-      <div className="right-content">
-        <div className="image">
+      <div>
+        <div>
           <img src="/home/hero.svg" alt="Coffe Delivery" />
         </div>
       </div>

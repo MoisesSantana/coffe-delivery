@@ -1,5 +1,6 @@
 import { Grid, TextField, Typography } from '@mui/material';
-import { AddresContainer, InputsContainer } from './addres-styled';
+import { InputsContainer } from './addres-styled';
+import { FormCards } from '../../../../../styles/shared-styles';
 
 const LABEL_PROPS = {
   style: {
@@ -19,15 +20,19 @@ const INPUT_PROPS = {
 
 export function AddressForm() {
   return (
-    <AddresContainer>
+    <FormCards p="2.5rem">
       <header>
         <img src="./cart/pin.svg" alt="pin" />
-        <div className="header-texting">
-          <span>Endereço de Entrega</span>
-          <small>Informe o endereço onde deseja receber seu pedido</small>
+        <div>
+          <Typography variant="subtitle1" fontSize={16}>
+            Endereço de Entrega
+          </Typography>
+          <Typography variant="body1" fontSize={14}>
+            Informe o endereço onde deseja receber seu pedido
+          </Typography>
         </div>
       </header>
-      <InputsContainer>
+      <InputsContainer mt="2rem" gap="1rem">
         <Grid container spacing={2}>
           <Grid item xs={8}>
             <TextField
@@ -117,6 +122,6 @@ export function AddressForm() {
           </Grid>
         </Grid>
       </InputsContainer>
-    </AddresContainer>
+    </FormCards>
   );
 }

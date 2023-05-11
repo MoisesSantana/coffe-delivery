@@ -1,13 +1,8 @@
 import { Box, styled } from '@mui/material';
 
-export const CoffeListContainer = styled(Box)`
-  background-color: #fafafa;
-  padding: 4rem 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+export const HomeContainer = styled(Box)`
   width: 60%;
+  margin: auto;
   @media (max-width: 1820px) {
     width: 70%;
   }

@@ -1,8 +1,7 @@
-import { Stack, Typography } from '@mui/material';
+import { ButtonGroup, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import {
   ButtonContainer,
-  ButtonGroupContainer,
   CoffeCardContainer,
   FooterCardContainer,
   Tag,
@@ -58,15 +57,21 @@ export function CoffeCard({
         <span className="price">{price.toFixed(2)}</span>
 
         <div className="manage-quantity">
-          <ButtonGroupContainer>
-            <ButtonContainer onClick={() => handleQuantity(-1)}>
+          <ButtonGroup>
+            <ButtonContainer
+              disableTouchRipple
+              onClick={() => handleQuantity(-1)}
+            >
               -
             </ButtonContainer>
-            <ButtonContainer>{quantity}</ButtonContainer>
-            <ButtonContainer onClick={() => handleQuantity(1)}>
+            <ButtonContainer disableTouchRipple>{quantity}</ButtonContainer>
+            <ButtonContainer
+              disableTouchRipple
+              onClick={() => handleQuantity(1)}
+            >
               +
             </ButtonContainer>
-          </ButtonGroupContainer>
+          </ButtonGroup>
           <img
             onMouseEnter={() => setCartIcon('./home/button-cart.svg')}
             onMouseOut={() => setCartIcon('./home/button-cart.svg')}

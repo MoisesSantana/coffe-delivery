@@ -15,7 +15,7 @@ export function Checkout() {
   }, [isMobile, theme]);
 
   return (
-    <CheckoutContainer>
+    <CheckoutContainer py="4rem" mx="auto">
       <Form />
       <Cart />
     </CheckoutContainer>
