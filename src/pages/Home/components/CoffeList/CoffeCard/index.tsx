@@ -1,11 +1,11 @@
 import { ButtonGroup, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import {
-  ButtonContainer,
   CoffeCardContainer,
   FooterCardContainer,
   Tag,
 } from './coffecard-styled';
+import { ButtonContainer } from '../../../../../styles/shared-styles';
 
 interface CoffeCardProps {
   name: string;
@@ -58,17 +58,11 @@ export function CoffeCard({
 
         <div className="manage-quantity">
           <ButtonGroup>
-            <ButtonContainer
-              disableTouchRipple
-              onClick={() => handleQuantity(-1)}
-            >
+            <ButtonContainer onClick={() => handleQuantity(-1)}>
               -
             </ButtonContainer>
-            <ButtonContainer disableTouchRipple>{quantity}</ButtonContainer>
-            <ButtonContainer
-              disableTouchRipple
-              onClick={() => handleQuantity(1)}
-            >
+            <ButtonContainer>{quantity}</ButtonContainer>
+            <ButtonContainer onClick={() => handleQuantity(1)}>
               +
             </ButtonContainer>
           </ButtonGroup>

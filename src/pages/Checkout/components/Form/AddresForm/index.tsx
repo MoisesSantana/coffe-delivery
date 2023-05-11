@@ -1,6 +1,6 @@
 import { Grid, TextField, Typography } from '@mui/material';
 import { InputsContainer } from './addres-styled';
-import { FormCards } from '../../../../../styles/shared-styles';
+import { CheckoutCards } from '../../../../../styles/shared-styles';
 
 const LABEL_PROPS = {
   style: {
@@ -20,7 +20,7 @@ const INPUT_PROPS = {
 
 export function AddressForm() {
   return (
-    <FormCards p="2.5rem">
+    <CheckoutCards p="2.5rem">
       <header>
         <img src="./cart/pin.svg" alt="pin" />
         <div>
@@ -122,6 +122,6 @@ export function AddressForm() {
           </Grid>
         </Grid>
       </InputsContainer>
-    </FormCards>
+    </CheckoutCards>
   );
 }

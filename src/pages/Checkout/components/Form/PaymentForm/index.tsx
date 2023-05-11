@@ -1,6 +1,6 @@
 import { Typography, useTheme } from '@mui/material';
 import { CardContainer, CardsContainer } from './payment-styled';
-import { FormCards } from '../../../../../styles/shared-styles';
+import { CheckoutCards } from '../../../../../styles/shared-styles';
 
 export function PaymentForm() {
   const cards = [
@@ -23,15 +23,15 @@ export function PaymentForm() {
 
   const { palette } = useTheme();
   return (
-    <FormCards p="2.5rem">
+    <CheckoutCards p="2.5rem">
       <header>
         <img src="./cart/dolar.svg" alt="pin" />
         <div>
           <Typography variant="body1" fontSize={16} color={palette.grey[800]}>
-            Endereço de Entrega
+            Pagamento
           </Typography>
           <Typography variant="body1" fontSize={14}>
-            Informe o endereço onde deseja receber seu pedido
+            O pagamento é feito na entrega. Escolha a forma que deseja pagar
           </Typography>
         </div>
       </header>
@@ -43,6 +43,6 @@ export function PaymentForm() {
           </CardContainer>
         ))}
       </CardsContainer>
-    </FormCards>
+    </CheckoutCards>
   );
 }
