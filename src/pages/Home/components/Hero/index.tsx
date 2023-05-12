@@ -21,7 +21,7 @@ export function Hero() {
     },
     {
       id: 3,
-      image: './bullets/coffe-bullet.svg',
+      image: './bullets/coffee-bullet.svg',
       text: 'O café chega fresquinho até você',
     },
   ];
@@ -52,7 +52,7 @@ export function Hero() {
       </div>
       <div>
         <div>
-          <img src="/home/hero.svg" alt="Coffe Delivery" />
+          <img src="/home/hero.svg" alt="Coffee Delivery" />
         </div>
       </div>
     </HeroContainer>

@@ -1,4 +1,4 @@
-import { CoffeList } from './components/CoffeList';
+import { CoffeeList } from './components/CoffeeList';
 import { Hero } from './components/Hero';
 import { HomeContainer } from './home-styled';
 
@@ -6,7 +6,7 @@ export function Home() {
   return (
     <HomeContainer>
       <Hero />
-      <CoffeList />
+      <CoffeeList />
     </HomeContainer>
   );
 }

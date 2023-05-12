@@ -3,7 +3,7 @@ import { HeaderContainer } from './header-styled';
 export function Header() {
   return (
     <HeaderContainer>
-      <img src="./logo.svg" alt="Coffe Delivery" />
+      <img src="./logo.svg" alt="e Delivery" />
       <section className="actions">
         <div className="location">
           <img src="./pin.svg" alt="localização" />

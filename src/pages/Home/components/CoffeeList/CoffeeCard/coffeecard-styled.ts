@@ -1,6 +1,6 @@
-import { Button, Card, Chip, styled } from '@mui/material';
+import { Card, Chip, styled } from '@mui/material';
 
-export const CoffeCardContainer = styled(Card)`
+export const CoffeeCardContainer = styled(Card)`
   background-color: ${({ theme }) => theme.palette.grey[200]};
   width: 256px;
   height: 310px;
@@ -11,7 +11,7 @@ export const CoffeCardContainer = styled(Card)`
   justify-content: space-between;
   overflow: visible;
 
-  .coffe-image {
+  .coffee-image {
     margin-top: -20px;
   }
 `;

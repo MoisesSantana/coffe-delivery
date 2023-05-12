@@ -1,13 +1,13 @@
 import { ButtonGroup, Stack, Typography } from '@mui/material';
 import { useState } from 'react';
 import {
-  CoffeCardContainer,
+  CoffeeCardContainer,
   FooterCardContainer,
   Tag,
-} from './coffecard-styled';
+} from './coffeecard-styled';
 import { ButtonContainer } from '../../../../../styles/shared-styles';
 
-interface CoffeCardProps {
+interface CoffeeCardProps {
   name: string;
   description: string;
   image: string;
@@ -15,13 +15,13 @@ interface CoffeCardProps {
   tags: string[];
 }
 
-export function CoffeCard({
+export function CoffeeCard({
   name,
   description,
   image,
   price,
   tags,
-}: CoffeCardProps) {
+}: CoffeeCardProps) {
   const [cartIcon, setCartIcon] = useState<string>('./home/button-cart.svg');
   const [quantity, setQuantity] = useState<number>(1);
 
@@ -30,8 +30,8 @@ export function CoffeCard({
   };
 
   return (
-    <CoffeCardContainer>
-      <img src={image} alt={name} className="coffe-image" />
+    <CoffeeCardContainer>
+      <img src={image} alt={name} className="coffee-image" />
       <Stack
         direction="row"
         flexWrap="wrap"
@@ -76,6 +76,6 @@ export function CoffeCard({
           />
         </div>
       </FooterCardContainer>
-    </CoffeCardContainer>
+    </CoffeeCardContainer>
   );
 }

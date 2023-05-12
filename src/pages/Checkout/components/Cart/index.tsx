@@ -12,7 +12,7 @@ export function Cart() {
       <CheckoutCards p="2.5rem">
         <CartProductList>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -23,7 +23,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -34,7 +34,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -45,7 +45,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -56,7 +56,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -67,7 +67,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
@@ -78,7 +78,7 @@ export function Cart() {
             <span>R$00,00</span>
           </li>
           <li>
-            <img src="/coffes/coffe-arabe.svg" alt="" />
+            <img src="/coffees/coffee-arabe.svg" alt="" />
             <span>arabe</span>
             <ButtonGroup>
               <ButtonContainer>-</ButtonContainer>
