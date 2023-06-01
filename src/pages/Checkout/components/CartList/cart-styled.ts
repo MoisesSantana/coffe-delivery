@@ -1,4 +1,4 @@
-import { Button, styled } from '@mui/material';
+import { Button, ButtonBase, styled } from '@mui/material';
 
 export const CartContainer = styled('aside')`
   margin: 0 auto;
@@ -31,14 +31,14 @@ export const CartProductList = styled('ul')`
       width: 64px;
     }
 
-    .teste {
+    .middle-info {
       display: flex;
       flex-direction: column;
       width: 100%;
       padding: 0 1.5rem;
       justify-content: space-between;
 
-      .teste2 {
+      .qty {
         display: flex;
         gap: 0.5rem;
       }
@@ -58,5 +58,36 @@ export const RemoveButtonContainer = styled(Button)`
   img {
     max-width: 16px;
     margin-right: 6px;
+  }
+`;
+
+export const RowGroup = styled('div')`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0;
+
+  div {
+    display: flex;
+    justify-content: space-between;
+  }
+`;
+
+export const ButtonContainer = styled(ButtonBase)`
+  background-color: ${({ theme }) => theme.palette.warning.main};
+  padding: 12px 8px;
+  font-family: 'Roboto', sans-serif;
+  color: white;
+
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 160%;
+
+  text-transform: uppercase;
+  border-radius: 6px;
+  transition: 300ms ease-in-out;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.palette.warning.dark};
   }
 `;

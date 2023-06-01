@@ -2,7 +2,6 @@ import { Box, Button, styled } from '@mui/material';
 
 export const CardsContainer = styled(Box)`
   display: flex;
-  /* flex-wrap: wrap; */
   justify-content: space-between;
 `;
 
@@ -17,6 +16,8 @@ export const CardContainer = styled(Button)`
   padding: 1rem;
   gap: 6px;
   border-radius: 6px;
+  border: 1px solid transparent;
+  transition: 300ms ease-in-out;
 
   &:hover {
     border: 1px solid ${({ theme }) => theme.palette.secondary.main};

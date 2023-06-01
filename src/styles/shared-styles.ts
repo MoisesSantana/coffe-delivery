@@ -21,6 +21,7 @@ export const ButtonContainer = styled(Button)`
   padding: 0 10px;
   background-color: ${({ theme }) => theme.palette.grey[400]};
   color: ${({ theme }) => theme.palette.secondary.main};
+  transition: 300ms ease-in-out;
 
   &:hover {
     border: none;
@@ -31,6 +32,7 @@ export const ButtonContainer = styled(Button)`
     color: ${({ theme }) => theme.palette.grey[900]};
     cursor: auto;
     font-size: 1rem;
+    transition: 300ms ease-in-out;
 
     &:hover {
       background-color: ${({ theme }) => theme.palette.grey[400]};
