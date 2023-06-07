@@ -5,6 +5,11 @@ export const CartContainer = styled('aside')`
   display: flex;
   flex-direction: column;
   gap: 1rem;
+
+  @media (max-width: 1360px) {
+    width: 100%;
+    flex-direction: column;
+  }
 `;
 
 export const CartProductList = styled('ul')`

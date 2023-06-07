@@ -13,5 +13,6 @@ export const CheckoutContainer = styled(Box)`
   }
   @media (max-width: 1360px) {
     width: 90%;
+    flex-direction: column;
   }
 `;

@@ -37,4 +37,10 @@ export const MainContent = styled(Box)`
     border-radius: 6px 36px;
     padding: 40px;
   }
+
+  @media (max-width: 1100px) {
+    img {
+      display: none;
+    }
+  }
 `;

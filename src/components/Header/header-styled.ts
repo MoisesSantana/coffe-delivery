@@ -1,16 +1,22 @@
 import { styled } from '@mui/material';
 
 export const HeaderContainer = styled('header')`
-  width: 100%;
-  background-color: #fafafa;
+  width: 60%;
+  background-color: ${({ theme }) => theme.palette.grey[100]};
   display: flex;
   justify-content: space-between;
-  padding: 0 4rem;
   margin: 0;
   height: 105px;
   align-items: center;
-  @media (max-width: 768px) {
-    padding: 0 2rem;
+  margin: auto;
+  @media (max-width: 1820px) {
+    width: 70%;
+  }
+  @media (max-width: 1540px) {
+    width: 80%;
+  }
+  @media (max-width: 1360px) {
+    width: 90%;
   }
 
   .actions {
@@ -23,21 +29,38 @@ export const HeaderContainer = styled('header')`
     div {
       padding: 8px;
       box-sizing: border-box;
-      background-color: orange;
       display: flex;
       gap: 4px;
       align-items: center;
       border-radius: 6px;
       height: 100%;
-      color: #4b2995;
+      color: ${({ theme }) => theme.palette.secondary.dark};
     }
 
     .location {
-      background-color: #ebe5f9;
+      background-color: ${({ theme }) => theme.palette.secondary.light};
     }
 
     .cart {
-      background-color: #f1e9c9;
+      background-color: ${({ theme }) => theme.palette.warning.light};
+      position: relative;
+
+      span {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        border-radius: 50%;
+        font-family: ${({ theme }) => theme.typography.body2.fontFamily};
+        font-size: 12px;
+        font-weight: bold;
+        width: 20px;
+        height: 20px;
+        background-color: ${({ theme }) => theme.palette.warning.dark};
+        color: ${({ theme }) => theme.palette.grey[100]};
+        right: -8px;
+        top: -8px;
+      }
     }
   }
 `;

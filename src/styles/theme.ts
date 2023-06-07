@@ -74,7 +74,7 @@ const theme = createTheme({
       color: '#574F4D',
     },
     body2: {
-      ly: '"Roboto", sans-serif',
+      fontFamily: '"Roboto", sans-serif',
       color: '#8d8686',
     },
   },

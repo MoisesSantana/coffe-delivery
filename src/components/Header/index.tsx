@@ -11,6 +11,7 @@ export function Header() {
         </div>
         <div className="cart">
           <img src="./cart.svg" alt="carrinho" />
+          <span>0</span>
         </div>
       </section>
     </HeaderContainer>
