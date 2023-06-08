@@ -2,6 +2,7 @@ import { Box, styled } from '@mui/material';
 
 export const CheckoutContainer = styled(Box)`
   display: flex;
+  padding-top: 210px;
   flex-direction: row;
   gap: 2rem;
   width: 60%;

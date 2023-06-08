@@ -19,10 +19,10 @@ export function Header() {
           <img src="./pin.svg" alt="localização" />
           <span>Rio de Janeiro</span>
         </div>
-        <div className="cart">
+        <button className="cart">
           <img src="./cart.svg" alt="carrinho" />
           <span>{total}</span>
-        </div>
+        </button>
       </section>
     </HeaderContainer>
   );

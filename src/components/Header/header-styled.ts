@@ -1,14 +1,17 @@
 import { styled } from '@mui/material';
 
 export const HeaderContainer = styled('header')`
-  width: 60%;
+  width: 100%;
+  padding: 0 20%;
   background-color: ${({ theme }) => theme.palette.grey[100]};
   display: flex;
   justify-content: space-between;
-  margin: 0;
   height: 105px;
   align-items: center;
-  margin: auto;
+  position: fixed;
+  right: 50%;
+  top: 0;
+  transform: translateX(50%);
   @media (max-width: 1820px) {
     width: 70%;
   }
@@ -42,8 +45,19 @@ export const HeaderContainer = styled('header')`
     }
 
     .cart {
+      line-height: 0;
+      border: none;
+      height: 100%;
+      width: 38px;
+      border-radius: 6px;
+      cursor: pointer;
       background-color: ${({ theme }) => theme.palette.warning.light};
       position: relative;
+      transition: 200ms ease-in-out;
+
+      :hover {
+        filter: brightness(0.95);
+      }
 
       span {
         display: flex;

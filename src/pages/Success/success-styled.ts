@@ -3,6 +3,7 @@ import { Box, styled } from '@mui/material';
 export const SuccessContainer = styled(Box)`
   width: 60%;
   margin: auto;
+  padding-top: 105px;
   margin-top: 80px;
   @media (max-width: 1820px) {
     width: 70%;

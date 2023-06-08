@@ -1,6 +1,7 @@
 import { Box, styled } from '@mui/material';
 
 export const HomeContainer = styled(Box)`
+  padding-top: 105px;
   width: 60%;
   margin: auto;
   @media (max-width: 1820px) {
