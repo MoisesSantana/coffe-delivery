@@ -11,7 +11,7 @@ export function CoffeeList() {
       <Grid container spacing={6}>
         {cards.map((coffee) => (
           <Grid key={coffee.id} item xs={12} sm={6} md={4} lg={3}>
-            <CoffeeCard {...coffee} />
+            <CoffeeCard {...coffee} coffee={coffee} />
           </Grid>
         ))}
       </Grid>

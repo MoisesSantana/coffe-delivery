@@ -1,29 +1,28 @@
 import { ButtonGroup, Stack, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import {
   CoffeeCardContainer,
   FooterCardContainer,
   Tag,
 } from './coffeecard-styled';
 import { ButtonContainer } from '../../../../../styles/shared-styles';
+import { CoffeContext } from '../../../../../context/coffe-context';
 
 interface CoffeeCardProps {
-  name: string;
-  description: string;
-  image: string;
-  price: number;
-  tags: string[];
+  coffee: {
+    name: string;
+    description: string;
+    image: string;
+    price: number;
+    tags: string[];
+    id: number;
+  };
 }
 
-export function CoffeeCard({
-  name,
-  description,
-  image,
-  price,
-  tags,
-}: CoffeeCardProps) {
-  const [cartIcon, setCartIcon] = useState<string>('./home/button-cart.svg');
+export function CoffeeCard({ coffee }: CoffeeCardProps) {
+  const [cartIcon, setCartIcon] = useState<string>('/home/button-cart.svg');
   const [quantity, setQuantity] = useState<number>(1);
+  const { addInCart } = useContext(CoffeContext);
 
   const handleQuantity = (add: number): void => {
     if (quantity > 1 || add === 1) setQuantity((state) => state + add);
@@ -31,18 +30,18 @@ export function CoffeeCard({
 
   return (
     <CoffeeCardContainer>
-      <img src={image} alt={name} className="coffee-image" />
+      <img src={coffee.image} alt={coffee.name} className="coffee-image" />
       <Stack
         direction="row"
         flexWrap="wrap"
         spacing={2}
         justifyContent="center"
       >
-        {tags.map((tag) => (
-          <Tag key={`${name}-${tag}`} label={tag} />
+        {coffee.tags.map((tag) => (
+          <Tag key={`${coffee.name}-${tag}`} label={tag} />
         ))}
       </Stack>
-      <Typography variant="h3">{name}</Typography>
+      <Typography variant="h3">{coffee.name}</Typography>
       <Typography
         variant="body2"
         align="center"
@@ -51,10 +50,10 @@ export function CoffeeCard({
           px: '20px',
         }}
       >
-        {description}
+        {coffee.description}
       </Typography>
       <FooterCardContainer>
-        <span className="price">{price.toFixed(2)}</span>
+        <span className="price">{coffee.price.toFixed(2)}</span>
 
         <div className="manage-quantity">
           <ButtonGroup>
@@ -66,14 +65,19 @@ export function CoffeeCard({
               +
             </ButtonContainer>
           </ButtonGroup>
-          <img
-            onMouseEnter={() => setCartIcon('./home/button-cart.svg')}
-            onMouseOut={() => setCartIcon('./home/button-cart.svg')}
-            onBlur={() => setCartIcon('./home/button-cart.svg')}
-            className="cart"
-            src={cartIcon}
-            alt="carrinho"
-          />
+          <button
+            className="cart-btn"
+            onClick={() => addInCart(coffee, quantity)}
+          >
+            <img
+              onMouseEnter={() => setCartIcon('/home/button-cart-hover.svg')}
+              onMouseOut={() => setCartIcon('/home/button-cart.svg')}
+              onBlur={() => setCartIcon('/home/button-cart-hover.svg')}
+              className="cart"
+              src={cartIcon}
+              alt="carrinho"
+            />
+          </button>
         </div>
       </FooterCardContainer>
     </CoffeeCardContainer>

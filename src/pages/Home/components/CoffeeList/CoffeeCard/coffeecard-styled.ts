@@ -14,6 +14,11 @@ export const CoffeeCardContainer = styled(Card)`
   .coffee-image {
     margin-top: -20px;
   }
+
+  .cart-btn {
+    border: none;
+    line-height: 0;
+  }
 `;
 
 export const Tag = styled(Chip)`
