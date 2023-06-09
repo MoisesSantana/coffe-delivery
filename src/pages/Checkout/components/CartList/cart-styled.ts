@@ -91,8 +91,13 @@ export const ButtonContainer = styled(ButtonBase)`
   text-transform: uppercase;
   border-radius: 6px;
   transition: 300ms ease-in-out;
+  cursor: pointer;
 
   &:hover {
     background-color: ${({ theme }) => theme.palette.warning.dark};
+  }
+
+  &:disabled {
+    background-color: ${({ theme }) => theme.palette.warning.light};
   }
 `;

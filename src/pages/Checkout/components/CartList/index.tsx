@@ -14,7 +14,7 @@ const DELIVERY_PRICE = 8;
 
 export function CartList() {
   const { palette } = useTheme();
-  const { cart } = useContext(CoffeContext);
+  const { cart, isDisabledConfirmOrderBtn } = useContext(CoffeContext);
   const total = cart.reduce((acc, curr) => acc + curr.qty * curr.price, 0);
   return (
     <CartContainer>
@@ -59,7 +59,9 @@ export function CartList() {
             </Typography>
           </div>
         </RowGroup>
-        <ButtonContainer>Confirmar pedido</ButtonContainer>
+        <ButtonContainer disabled={isDisabledConfirmOrderBtn}>
+          Confirmar pedido
+        </ButtonContainer>
       </CheckoutCards>
     </CartContainer>
   );

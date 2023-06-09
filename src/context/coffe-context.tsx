@@ -1,4 +1,6 @@
 import { useMemo, createContext, useState, useCallback } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useForm, UseFormRegister, FieldValues } from 'react-hook-form';
 import { Coffee, CoffeeWithQty } from '../types';
 
 interface CoffeeContextType {
@@ -6,6 +8,8 @@ interface CoffeeContextType {
   cart: CoffeeWithQty[];
   removeOfCard: (id: number) => void;
   handleQtyOfCoffee: (coffee: CoffeeWithQty, addOrSub: number) => void;
+  isDisabledConfirmOrderBtn: boolean;
+  register: UseFormRegister<FieldValues>;
 }
 
 interface CoffeProviderProps {
@@ -16,6 +20,20 @@ export const CoffeContext = createContext({} as CoffeeContextType);
 
 export function CoffeProvider({ children }: CoffeProviderProps) {
   const [cart, setCart] = useState<CoffeeWithQty[]>([]);
+
+  const { register, watch } = useForm();
+
+  const watchFields = watch([
+    'cep',
+    'street',
+    'number',
+    'neighborhood',
+    'city',
+    'uf',
+    'paymentMethod',
+  ]);
+
+  const isDisabledConfirmOrderBtn = watchFields.some((field) => !field);
 
   const hasThisCoffeeInCart = useCallback(
     (coffee: Coffee) => {
@@ -66,8 +84,17 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
       cart,
       removeOfCard,
       handleQtyOfCoffee,
+      isDisabledConfirmOrderBtn,
+      register,
     }),
-    [addInCart, cart, removeOfCard, handleQtyOfCoffee]
+    [
+      addInCart,
+      cart,
+      removeOfCard,
+      handleQtyOfCoffee,
+      isDisabledConfirmOrderBtn,
+      register,
+    ]
   );
 
   return (

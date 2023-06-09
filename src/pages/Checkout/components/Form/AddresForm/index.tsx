@@ -1,6 +1,9 @@
 import { Grid, TextField, Typography } from '@mui/material';
+import { useForm } from 'react-hook-form';
+import { useContext } from 'react';
 import { InputsContainer } from './addres-styled';
 import { CheckoutCards } from '../../../../../styles/shared-styles';
+import { CoffeContext } from '../../../../../context/coffe-context';
 
 const LABEL_PROPS = {
   style: {
@@ -19,6 +22,7 @@ const INPUT_PROPS = {
 };
 
 export function AddressForm() {
+  const { register } = useContext(CoffeContext);
   return (
     <CheckoutCards p="2.5rem">
       <header>
@@ -43,6 +47,7 @@ export function AddressForm() {
               color="secondary"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('cep')}
             />
           </Grid>
         </Grid>
@@ -56,6 +61,7 @@ export function AddressForm() {
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('street')}
             />
           </Grid>
         </Grid>
@@ -68,6 +74,7 @@ export function AddressForm() {
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('number')}
             />
           </Grid>
           <Grid item xs={8}>
@@ -85,6 +92,7 @@ export function AddressForm() {
               }}
               // eslint-disable-next-line react/jsx-no-duplicate-props
               inputProps={INPUT_PROPS}
+              {...register('complement')}
             />
           </Grid>
         </Grid>
@@ -97,6 +105,7 @@ export function AddressForm() {
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('neighborhood')}
             />
           </Grid>
           <Grid item xs={6}>
@@ -108,6 +117,7 @@ export function AddressForm() {
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('city')}
             />
           </Grid>
           <Grid item xs={2}>
@@ -118,6 +128,7 @@ export function AddressForm() {
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
+              {...register('uf')}
             />
           </Grid>
         </Grid>
