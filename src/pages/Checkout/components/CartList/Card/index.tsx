@@ -1,46 +1,44 @@
 import { ButtonGroup, Typography } from '@mui/material';
-import { useState } from 'react';
+import { useContext } from 'react';
 import { ButtonContainer } from '../../../../../styles/shared-styles';
 import { RemoveButtonContainer } from '../cart-styled';
+import { CoffeeWithQty } from '../../../../../types';
+import { CoffeContext } from '../../../../../context/coffe-context';
 
 interface CardProps {
-  name: string;
-  image: string;
-  price: number;
+  coffee: CoffeeWithQty;
 }
 
-export function Card({ name, image, price }: CardProps) {
-  const [quantity, setQuantity] = useState(1);
-
-  const handleQuantity = (add: number): void => {
-    if (quantity > 1 || add === 1) setQuantity((state) => state + add);
-  };
+export function Card({ coffee }: CardProps) {
+  const { removeOfCard, handleQtyOfCoffee } = useContext(CoffeContext);
 
   return (
-    <li key={name}>
-      <img src={image} alt={name} />
+    <li key={coffee.name}>
+      <img src={coffee.image} alt={coffee.name} />
       <div className="middle-info">
         <Typography variant="subtitle1" fontSize={16}>
-          {name}
+          {coffee.name}
         </Typography>
         <div className="qty">
           <ButtonGroup>
-            <ButtonContainer onClick={() => handleQuantity(-1)}>
+            <ButtonContainer
+              onClick={() => coffee.qty > 1 && handleQtyOfCoffee(coffee, -1)}
+            >
               -
             </ButtonContainer>
-            <ButtonContainer>{quantity}</ButtonContainer>
-            <ButtonContainer onClick={() => handleQuantity(1)}>
+            <ButtonContainer>{coffee.qty}</ButtonContainer>
+            <ButtonContainer onClick={() => handleQtyOfCoffee(coffee, 1)}>
               +
             </ButtonContainer>
           </ButtonGroup>
-          <RemoveButtonContainer>
+          <RemoveButtonContainer onClick={() => removeOfCard(coffee.id)}>
             <img src="/cart/trash.svg" alt="lixeira" />
             Remover
           </RemoveButtonContainer>
         </div>
       </div>
       <Typography variant="body1" fontWeight="bold" fontSize={16}>
-        R${price.toFixed(2)}
+        R${(coffee.qty * coffee.price).toFixed(2)}
       </Typography>
     </li>
   );

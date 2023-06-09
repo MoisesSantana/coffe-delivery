@@ -1,4 +1,5 @@
 import { Typography, useTheme } from '@mui/material';
+import { useContext } from 'react';
 import {
   ButtonContainer,
   CartContainer,
@@ -6,19 +7,22 @@ import {
   RowGroup,
 } from './cart-styled';
 import { CheckoutCards } from '../../../../styles/shared-styles';
-import { cards } from '../../../../data';
 import { Card } from './Card';
+import { CoffeContext } from '../../../../context/coffe-context';
+
+const DELIVERY_PRICE = 8;
 
 export function CartList() {
   const { palette } = useTheme();
-  console.log(palette);
+  const { cart } = useContext(CoffeContext);
+  const total = cart.reduce((acc, curr) => acc + curr.qty * curr.price, 0);
   return (
     <CartContainer>
       <Typography variant="h4">Cafés selecionados</Typography>
       <CheckoutCards p="2.5rem">
         <CartProductList>
-          {cards.map((coffee) => (
-            <Card key={coffee.name} {...coffee} />
+          {cart.map((coffee) => (
+            <Card key={coffee.name} coffee={coffee} />
           ))}
         </CartProductList>
         <RowGroup>
@@ -27,7 +31,7 @@ export function CartList() {
               Total de itens
             </Typography>
             <Typography variant="body1" fontSize={16}>
-              R$20,70
+              R${total.toFixed(2)}
             </Typography>
           </div>
           <div>
@@ -35,7 +39,7 @@ export function CartList() {
               Entrega
             </Typography>
             <Typography variant="body1" fontSize={16}>
-              R$8,00
+              R${DELIVERY_PRICE.toFixed(2)}
             </Typography>
           </div>
           <div>
@@ -51,7 +55,7 @@ export function CartList() {
               fontWeight={700}
               color={palette.grey['800']}
             >
-              R$28,70
+              R${(DELIVERY_PRICE + total).toFixed(2)}
             </Typography>
           </div>
         </RowGroup>
