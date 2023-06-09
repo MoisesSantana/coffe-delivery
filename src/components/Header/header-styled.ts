@@ -12,6 +12,8 @@ export const HeaderContainer = styled('header')`
   right: 50%;
   top: 0;
   transform: translateX(50%);
+  z-index: 20;
+
   @media (max-width: 1820px) {
     width: 70%;
   }
