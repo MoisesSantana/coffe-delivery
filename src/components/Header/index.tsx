@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { HeaderContainer } from './header-styled';
 import { CoffeContext } from '../../context/coffe-context';
 import { CoffeeWithQty } from '../../types';
@@ -15,7 +15,9 @@ export function Header() {
 
   return (
     <HeaderContainer>
-      <img src="./logo.svg" alt="e Delivery" />
+      <Link to="/">
+        <img src="./logo.svg" alt="e Delivery" />
+      </Link>
       <section className="actions">
         <div className="location">
           <img src="./pin.svg" alt="localização" />
