@@ -22,16 +22,23 @@ export function Card({ coffee }: CardProps) {
         <div className="qty">
           <ButtonGroup>
             <ButtonContainer
+              type="button"
               onClick={() => coffee.qty > 1 && handleQtyOfCoffee(coffee, -1)}
             >
               -
             </ButtonContainer>
-            <ButtonContainer>{coffee.qty}</ButtonContainer>
-            <ButtonContainer onClick={() => handleQtyOfCoffee(coffee, 1)}>
+            <ButtonContainer type="button">{coffee.qty}</ButtonContainer>
+            <ButtonContainer
+              type="button"
+              onClick={() => handleQtyOfCoffee(coffee, 1)}
+            >
               +
             </ButtonContainer>
           </ButtonGroup>
-          <RemoveButtonContainer onClick={() => removeOfCard(coffee.id)}>
+          <RemoveButtonContainer
+            type="button"
+            onClick={() => removeOfCard(coffee.id)}
+          >
             <img src="/cart/trash.svg" alt="lixeira" />
             Remover
           </RemoveButtonContainer>

@@ -1,6 +1,6 @@
+/* eslint-disable import/no-extraneous-dependencies */
 import { useMemo, createContext, useState, useCallback } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { useForm, UseFormRegister, FieldValues } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Coffee, CoffeeWithQty } from '../types';
 
 interface CoffeeContextType {
@@ -8,32 +8,44 @@ interface CoffeeContextType {
   cart: CoffeeWithQty[];
   removeOfCard: (id: number) => void;
   handleQtyOfCoffee: (coffee: CoffeeWithQty, addOrSub: number) => void;
-  isDisabledConfirmOrderBtn: boolean;
-  register: UseFormRegister<FieldValues>;
+  handleConfirmOrder: (data: Order) => void;
+  order: OrderWithCart | null;
 }
-
 interface CoffeProviderProps {
   children: React.ReactNode;
+}
+
+export interface Order {
+  cep: string;
+  street: string;
+  number: number;
+  neighborhood: string;
+  city: string;
+  uf: string;
+  paymentMethod: string;
+  complement?: string;
+}
+
+interface OrderWithCart extends Order {
+  cart: CoffeeWithQty[];
 }
 
 export const CoffeContext = createContext({} as CoffeeContextType);
 
 export function CoffeProvider({ children }: CoffeProviderProps) {
   const [cart, setCart] = useState<CoffeeWithQty[]>([]);
+  const [order, setOrder] = useState<OrderWithCart | null>(null);
 
-  const { register, watch } = useForm();
+  const navigate = useNavigate();
 
-  const watchFields = watch([
-    'cep',
-    'street',
-    'number',
-    'neighborhood',
-    'city',
-    'uf',
-    'paymentMethod',
-  ]);
-
-  const isDisabledConfirmOrderBtn = watchFields.some((field) => !field);
+  const handleConfirmOrder = useCallback(
+    (orderData: Order) => {
+      setOrder({ ...orderData, cart });
+      setCart([]);
+      navigate('success');
+    },
+    [cart, navigate]
+  );
 
   const hasThisCoffeeInCart = useCallback(
     (coffee: Coffee) => {
@@ -84,16 +96,16 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
       cart,
       removeOfCard,
       handleQtyOfCoffee,
-      isDisabledConfirmOrderBtn,
-      register,
+      handleConfirmOrder,
+      order,
     }),
     [
       addInCart,
+      order,
       cart,
       removeOfCard,
       handleQtyOfCoffee,
-      isDisabledConfirmOrderBtn,
-      register,
+      handleConfirmOrder,
     ]
   );
 

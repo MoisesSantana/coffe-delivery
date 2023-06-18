@@ -1,5 +1,6 @@
 import { Typography, useTheme } from '@mui/material';
 import { useContext } from 'react';
+import { useFormContext, FieldValues } from 'react-hook-form';
 import {
   ButtonContainer,
   CartContainer,
@@ -8,14 +9,46 @@ import {
 } from './cart-styled';
 import { CheckoutCards } from '../../../../styles/shared-styles';
 import { Card } from './Card';
-import { CoffeContext } from '../../../../context/coffe-context';
+import { CoffeContext, Order } from '../../../../context/coffe-context';
 
 const DELIVERY_PRICE = 8;
 
 export function CartList() {
+  const { watch, handleSubmit } = useFormContext();
   const { palette } = useTheme();
-  const { cart, isDisabledConfirmOrderBtn } = useContext(CoffeContext);
+  const { cart, handleConfirmOrder } = useContext(CoffeContext);
   const total = cart.reduce((acc, curr) => acc + curr.qty * curr.price, 0);
+
+  const watchFields = watch([
+    'cep',
+    'street',
+    'number',
+    'neighborhood',
+    'city',
+    'uf',
+    'paymentMethod',
+  ]);
+
+  const isDisabledConfirmOrderBtn = watchFields.some((field, index) => {
+    if (index === 2 && field === 0) return false;
+    return !field;
+  });
+
+  const handleSubmitForm = (data: FieldValues) => {
+    const orderData: Order = {
+      cep: data.cep,
+      street: data.street,
+      number: data.number,
+      neighborhood: data.neighborhood,
+      city: data.city,
+      uf: data.uf,
+      paymentMethod: data.paymentMethod,
+      complement: data.complement,
+    };
+
+    handleConfirmOrder(orderData);
+  };
+
   return (
     <CartContainer>
       <Typography variant="h4">Cafés selecionados</Typography>
@@ -59,9 +92,11 @@ export function CartList() {
             </Typography>
           </div>
         </RowGroup>
-        <ButtonContainer disabled={isDisabledConfirmOrderBtn}>
-          Confirmar pedido
-        </ButtonContainer>
+        <form onSubmit={handleSubmit(handleSubmitForm)}>
+          <ButtonContainer type="submit" disabled={isDisabledConfirmOrderBtn}>
+            Confirmar pedido
+          </ButtonContainer>
+        </form>
       </CheckoutCards>
     </CartContainer>
   );

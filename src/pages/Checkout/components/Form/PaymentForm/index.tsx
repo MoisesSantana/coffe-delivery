@@ -1,10 +1,11 @@
 import { Typography, useTheme } from '@mui/material';
-import { useContext } from 'react';
+import { useFormContext } from 'react-hook-form';
 import { CardContainer, CardsContainer } from './payment-styled';
 import { CheckoutCards } from '../../../../../styles/shared-styles';
-import { CoffeContext } from '../../../../../context/coffe-context';
 
 export function PaymentForm() {
+  const { register } = useFormContext();
+
   const cards = [
     {
       id: 0,
@@ -22,7 +23,6 @@ export function PaymentForm() {
       image: './cards/money.svg',
     },
   ];
-  const { register } = useContext(CoffeContext);
   const { palette } = useTheme();
   return (
     <CheckoutCards p="2.5rem">
@@ -42,6 +42,7 @@ export function PaymentForm() {
           <div key={card.id}>
             <input
               type="radio"
+              value={card.text}
               id={`method${card.id}`}
               {...register('paymentMethod')}
             />

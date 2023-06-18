@@ -1,9 +1,9 @@
 import { Grid, TextField, Typography } from '@mui/material';
-import { useForm } from 'react-hook-form';
-import { useContext } from 'react';
+import { useFormContext } from 'react-hook-form';
+import InputMask from 'react-input-mask';
 import { InputsContainer } from './addres-styled';
+
 import { CheckoutCards } from '../../../../../styles/shared-styles';
-import { CoffeContext } from '../../../../../context/coffe-context';
 
 const LABEL_PROPS = {
   style: {
@@ -22,7 +22,8 @@ const INPUT_PROPS = {
 };
 
 export function AddressForm() {
-  const { register } = useContext(CoffeContext);
+  const { register, formState } = useFormContext();
+
   return (
     <CheckoutCards p="2.5rem">
       <header>
@@ -39,16 +40,20 @@ export function AddressForm() {
       <InputsContainer mt="2rem" gap="1rem">
         <Grid container spacing={2}>
           <Grid item xs={8}>
-            <TextField
-              label="CEP"
-              type="text"
-              variant="outlined"
-              size="small"
-              color="secondary"
-              InputLabelProps={LABEL_PROPS}
-              inputProps={INPUT_PROPS}
-              {...register('cep')}
-            />
+            <InputMask mask="99999-999" maskChar={null} {...register('cep')}>
+              {() => (
+                <TextField
+                  label="CEP"
+                  type="text"
+                  variant="outlined"
+                  size="small"
+                  color={formState.errors.cep ? 'warning' : 'secondary'}
+                  InputLabelProps={LABEL_PROPS}
+                  inputProps={INPUT_PROPS}
+                  {...register('cep')}
+                />
+              )}
+            </InputMask>
           </Grid>
         </Grid>
         <Grid container spacing={2}>
@@ -56,9 +61,9 @@ export function AddressForm() {
             <TextField
               label="Rua"
               variant="outlined"
-              color="secondary"
               fullWidth
               size="small"
+              color={formState.errors.street ? 'warning' : 'secondary'}
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
               {...register('street')}
@@ -70,11 +75,12 @@ export function AddressForm() {
             <TextField
               label="Número"
               variant="outlined"
-              color="secondary"
+              color={formState.errors.number ? 'warning' : 'secondary'}
+              type="number"
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
-              {...register('number')}
+              {...register('number', { valueAsNumber: true })}
             />
           </Grid>
           <Grid item xs={8}>
@@ -101,7 +107,7 @@ export function AddressForm() {
             <TextField
               label="Bairro"
               variant="outlined"
-              color="secondary"
+              color={formState.errors.neighborhood ? 'warning' : 'secondary'}
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -113,7 +119,7 @@ export function AddressForm() {
               label="Cidade"
               fullWidth
               variant="outlined"
-              color="secondary"
+              color={formState.errors.city ? 'warning' : 'secondary'}
               size="small"
               InputLabelProps={LABEL_PROPS}
               inputProps={INPUT_PROPS}
@@ -121,15 +127,24 @@ export function AddressForm() {
             />
           </Grid>
           <Grid item xs={2}>
-            <TextField
-              label="UF"
-              variant="outlined"
-              color="secondary"
-              size="small"
-              InputLabelProps={LABEL_PROPS}
-              inputProps={INPUT_PROPS}
+            <InputMask
+              mask="AA"
+              maskChar=""
+              formatChars={{ A: '[A-Za-z]' }}
               {...register('uf')}
-            />
+            >
+              {() => (
+                <TextField
+                  label="UF"
+                  variant="outlined"
+                  color={formState.errors.uf ? 'warning' : 'secondary'}
+                  size="small"
+                  InputLabelProps={LABEL_PROPS}
+                  inputProps={INPUT_PROPS}
+                  {...register('uf')}
+                />
+              )}
+            </InputMask>
           </Grid>
         </Grid>
       </InputsContainer>
