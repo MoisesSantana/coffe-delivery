@@ -12,6 +12,10 @@ export const CheckoutCards = styled(Box)`
     align-items: flex-start;
     gap: 6px;
   }
+
+  form {
+    width: 100%;
+  }
 `;
 
 export const ButtonContainer = styled(Button)`

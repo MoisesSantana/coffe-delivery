@@ -79,6 +79,7 @@ export const RowGroup = styled('div')`
 `;
 
 export const ButtonContainer = styled(ButtonBase)`
+  width: 100%;
   background-color: ${({ theme }) => theme.palette.warning.main};
   padding: 12px 8px;
   font-family: 'Roboto', sans-serif;
