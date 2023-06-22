@@ -50,7 +50,7 @@ export function Hero() {
           ))}
         </div>
       </div>
-      <div>
+      <div className="right-content">
         <div>
           <img src="/home/hero.svg" alt="Coffee Delivery" />
         </div>

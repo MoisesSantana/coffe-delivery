@@ -19,7 +19,7 @@ export function DeliveryStatusItem({
         <Typography variant="body1" fontSize={16}>
           {title}
         </Typography>
-        <Typography variant="body1" fontSize={16}>
+        <Typography fontWeight={900} variant="body1" fontSize={16}>
           {description}
         </Typography>
       </div>

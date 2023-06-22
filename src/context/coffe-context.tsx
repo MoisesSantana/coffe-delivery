@@ -9,7 +9,7 @@ interface CoffeeContextType {
   removeOfCard: (id: number) => void;
   handleQtyOfCoffee: (coffee: CoffeeWithQty, addOrSub: number) => void;
   handleConfirmOrder: (data: Order) => void;
-  order: OrderWithCart | null;
+  order: OrderWithCart;
 }
 interface CoffeProviderProps {
   children: React.ReactNode;
@@ -30,11 +30,23 @@ interface OrderWithCart extends Order {
   cart: CoffeeWithQty[];
 }
 
+const ORDER_INITIAL_STATE = {
+  cep: '',
+  city: '',
+  complement: '',
+  neighborhood: '',
+  number: 0,
+  paymentMethod: '',
+  street: '',
+  uf: '',
+  cart: [],
+};
+
 export const CoffeContext = createContext({} as CoffeeContextType);
 
 export function CoffeProvider({ children }: CoffeProviderProps) {
   const [cart, setCart] = useState<CoffeeWithQty[]>([]);
-  const [order, setOrder] = useState<OrderWithCart | null>(null);
+  const [order, setOrder] = useState<OrderWithCart>(ORDER_INITIAL_STATE);
 
   const navigate = useNavigate();
 
