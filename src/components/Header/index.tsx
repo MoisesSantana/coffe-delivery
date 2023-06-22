@@ -16,15 +16,15 @@ export function Header() {
   return (
     <HeaderContainer>
       <Link to="/">
-        <img src="./logo.svg" alt="e Delivery" />
+        <img src="/logo.svg" alt="e Delivery" />
       </Link>
       <section className="actions">
         <div className="location">
-          <img src="./pin.svg" alt="localização" />
+          <img src="/pin.svg" alt="localização" />
           <span>Rio de Janeiro</span>
         </div>
         <button className="cart" onClick={() => navigate('checkout')}>
-          <img src="./cart.svg" alt="carrinho" />
+          <img src="/cart.svg" alt="carrinho" />
           <span>{total}</span>
         </button>
       </section>
