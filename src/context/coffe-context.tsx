@@ -2,6 +2,7 @@
 import { useMemo, createContext, useState, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Coffee, CoffeeWithQty } from '../types';
+import { getPersistedCart, persistCart } from '../utils/storage';
 
 interface CoffeeContextType {
   addInCart: (coffe: Coffee, quantity: number) => void;
@@ -42,10 +43,12 @@ const ORDER_INITIAL_STATE = {
   cart: [],
 };
 
+const CART_INITIAL_STATE: CoffeeWithQty[] = getPersistedCart();
+
 export const CoffeContext = createContext({} as CoffeeContextType);
 
 export function CoffeProvider({ children }: CoffeProviderProps) {
-  const [cart, setCart] = useState<CoffeeWithQty[]>([]);
+  const [cart, setCart] = useState<CoffeeWithQty[]>(CART_INITIAL_STATE);
   const [order, setOrder] = useState<OrderWithCart>(ORDER_INITIAL_STATE);
 
   const navigate = useNavigate();
@@ -54,6 +57,7 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
     (orderData: Order) => {
       setOrder({ ...orderData, cart });
       setCart([]);
+      persistCart([]);
       navigate('success');
     },
     [cart, navigate]
@@ -68,15 +72,16 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
 
   const addInCart = useCallback(
     (coffee: Coffee, quantity: number) => {
-      const updatedCart = cart.map((currCoffee) =>
+      const updatedCoffeeQty = cart.map((currCoffee) =>
         currCoffee.id === coffee.id ? { ...coffee, qty: quantity } : currCoffee
       );
 
-      setCart((state) =>
-        hasThisCoffeeInCart(coffee)
-          ? updatedCart
-          : [...state, { ...coffee, qty: quantity }]
-      );
+      const updatedCart = hasThisCoffeeInCart(coffee)
+        ? updatedCoffeeQty
+        : [...cart, { ...coffee, qty: quantity }];
+
+      setCart(updatedCart);
+      persistCart(updatedCart);
     },
     [cart, hasThisCoffeeInCart]
   );
@@ -85,6 +90,7 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
     (id: number) => {
       const updatedCart = cart.filter((coffee) => coffee.id !== id);
       setCart(updatedCart);
+      persistCart(updatedCart);
     },
     [cart]
   );
@@ -98,6 +104,7 @@ export function CoffeProvider({ children }: CoffeProviderProps) {
       );
 
       setCart(updatedCart);
+      persistCart(updatedCart);
     },
     [cart]
   );
