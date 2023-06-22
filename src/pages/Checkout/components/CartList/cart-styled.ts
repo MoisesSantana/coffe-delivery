@@ -1,8 +1,8 @@
 import { Button, ButtonBase, styled } from '@mui/material';
 
 export const CartContainer = styled('aside')`
-  margin: 0 auto;
   display: flex;
+  width: 500px;
   flex-direction: column;
   gap: 1rem;
 
@@ -22,7 +22,6 @@ export const CartProductList = styled('ul')`
   flex-direction: column;
 
   li {
-    width: 368px;
     padding: 40px 0;
     border-bottom: 1px solid ${({ theme }) => theme.palette.grey[400]};
     display: flex;

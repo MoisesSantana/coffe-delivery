@@ -3,7 +3,7 @@ import { Box, styled } from '@mui/material';
 export const CheckoutContainer = styled(Box)`
   display: flex;
   padding-top: 210px;
-  flex-direction: row;
+  justify-content: space-between;
   gap: 2rem;
   width: 60%;
   @media (max-width: 1820px) {

@@ -40,7 +40,7 @@ export const MainContent = styled(Box)`
   }
 
   @media (max-width: 1100px) {
-    img {
+    .hero {
       display: none;
     }
   }

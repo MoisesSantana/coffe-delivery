@@ -12,6 +12,10 @@ export const CardsContainer = styled(Box)`
     border: 1px solid ${({ theme }) => theme.palette.secondary.main};
     background-color: ${({ theme }) => theme.palette.secondary.light};
   }
+
+  @media (max-width: 700px) {
+    flex-direction: column;
+  }
 `;
 
 export const CardContainer = styled('label')`
@@ -34,5 +38,9 @@ export const CardContainer = styled('label')`
   &:hover {
     border: 1px solid ${({ theme }) => theme.palette.secondary.main};
     background-color: ${({ theme }) => theme.palette.secondary.light};
+  }
+
+  @media (max-width: 700px) {
+    width: 100%;
   }
 `;
